@@ -21,7 +21,8 @@ CMakeUserPresets.json
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.vscode/task.json
+
+.vscode/
 
 # AWS User-specific
 .idea/**/aws.xml
