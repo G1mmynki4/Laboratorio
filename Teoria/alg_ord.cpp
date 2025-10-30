@@ -1,9 +1,9 @@
 //Teoria pg 223
 #include <iostream>
-
+//Th = theory (per non confondere le funzioni con quelle in "vettori.h"
 using namespace std;
 
-void stampa(const int v[], int n){
+void stampaTh(const int v[], int n){
     if(n!=0){
         cout << "[";
         for (int i = 0; i < n;i++)
@@ -12,7 +12,7 @@ void stampa(const int v[], int n){
     }
 }
 
-void scambiavettore(int vettore[], int x, int y)
+void scambiavettoreTh(int vettore[], int x, int y)
 {
     int lavoro = vettore[x];
     vettore[x] = vettore[y];
@@ -20,21 +20,21 @@ void scambiavettore(int vettore[], int x, int y)
 }
 
 
-void SelectionSort(int vet[], int n){
+void SelectionSortTh(int vet[], int n){
     int min;
     for (int i = 0; i < n - 1;i++){
         min = i;
         for (int j = i + 1; j < n;j++)
             if(vet[j]<vet[min])
                 min = j;
-        scambiavettore(vet, i, min);
+        scambiavettoreTh(vet, i, min);
     }
 }
 
 int main(){
     int v[] = {2, 26, 8, 2, 23};
-    SelectionSort(v, 5);
-    stampa(v, 5);
+    SelectionSortTh(v, 5);
+    stampaTh(v, 5);
 
     return 0;
 }
