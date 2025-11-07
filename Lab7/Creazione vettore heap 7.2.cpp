@@ -33,8 +33,7 @@ int main(){
         cin >> vector[i];
     }
 
-    cout << "\nVettore di partenza con componenti positive e negative:\n";
-    cout << "{";
+    cout << "\nVettore di partenza con componenti positive e negative:\n" << "{";
     for (int i = 0; i < DIM; ++i)
         cout <<vector[i] << ", ";
     cout << "}"<<endl;
