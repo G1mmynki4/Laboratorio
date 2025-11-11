@@ -11,9 +11,10 @@ add_executable(Laboratorio
         VectorLib/vettori.cpp
         #Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
-        Teoria/Matrici_Dinamiche.cpp
-        Teoria/Liste.cpp
-        #"Lab4/Riferimenti.cpp"
+        #Teoria/Matrici_Dinamiche.cpp
+        #Teoria/Liste.cpp
+				Teoria/Liste2.cpp
+				#"Lab4/Riferimenti.cpp"
         #"Lab4/Puntatori 1.cpp"
         #"Lab4/Puntatori 2.cpp"
         #"Lab4/Puntatori 3.cpp"
