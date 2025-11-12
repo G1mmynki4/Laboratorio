@@ -28,6 +28,7 @@ void intesta(elem* &p0, int a) {
 }
 
 //Versione base
+/*
 void dealloca(elem* p0) {
   elem* p = p0, *q;
   while (p != nullptr) {
@@ -38,8 +39,20 @@ void dealloca(elem* p0) {
     //delete p;
   }
 }
+*/
 
 //Versione Robusta
+void dealloca(elem* &p0) {
+  elem* p = p0, *q;
+  while (p != nullptr) {
+    q = p;
+    p = p->pun;
+    delete q;
+    //p = p->pun;         //Comportamento non definito (errato)
+    //delete p;
+  }
+}
+
 bool esttesta(elem* &p0, int &a) {
   //p0 = p0->pun;     //Bypass, dal punto di vista logico, del primo elemento
   if (p0 == nullptr)
@@ -50,6 +63,79 @@ bool esttesta(elem* &p0, int &a) {
   p0 = p0->pun;
   delete p;
   return true;
+}
+
+void insfondo(elem* &p0, int &a) {
+  elem* n = new elem;
+  n->inf = a;
+  n->pun = nullptr;
+
+  elem* p = p0;
+  elem* q = nullptr;
+  while (p != nullptr) {
+    q = p;
+    p = p->pun;
+  }
+  if (p0 == nullptr)
+    p0 = n;
+  else
+    q->pun = n;
+}
+
+bool estrazione(elem* &p0, int a) {
+  elem* p = p0;
+  elem* q = nullptr;
+
+  while (p != nullptr && p->inf != a) {
+    q = p;
+    p = p->pun;
+  }
+
+  if (p == nullptr) // sia lista vuota che elemento non presente
+    return false;
+
+  if (a == p0->inf) {
+    p0 = p0->pun;
+    delete p0;
+    return true;
+  }
+
+  a = p->inf;
+  q->pun = p->pun;
+  delete p;
+}
+
+void insordinato(elem* &p0, int a) {
+  elem* n = new elem;
+  n->inf = a;
+
+  elem* p = p0;
+  elem* q = nullptr;
+  while (p != nullptr && p->inf < a) {
+    q = p;
+    p = p->pun;
+  }
+  if (p0 == nullptr) {    //Caso di lista vuota
+    n->pun = nullptr;
+    p0 = n;
+    return;
+  }
+
+  if (p == nullptr) {
+    if (q != nullptr) {   //Caso di inser. in fondo
+      n->pun = nullptr;
+      q->pun = n;
+      return;
+    }
+    else { //Caso di inser. in testa con lista non vuota
+      n->pun = p0;
+      p0 = n;
+      return;
+    }
+  }
+  //Caso di inserimento in mezzo alla lista
+  n->pun = p;
+  q->pun = n;
 }
 
 int main() {
@@ -106,9 +192,6 @@ int main() {
   stampaLista(L3);
   dealloca(L3);
   stampaLista(L3);
-
-
-
 
   return 0;
 }

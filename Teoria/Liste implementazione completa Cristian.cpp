@@ -1,5 +1,8 @@
 #include <iostream>
 
+// TODO: inserimento ordinato
+// TODO: selection e bubble sort su liste
+
 using T = int;
 
 struct node {
