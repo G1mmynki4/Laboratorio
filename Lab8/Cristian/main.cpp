@@ -8,7 +8,7 @@ struct node {
 };
 
 void add_head(node*& head, T data) {
-  auto new_node = new node(data, head);
+  auto new_node = new node{data, head};
   head = new_node;
 }
 
@@ -52,18 +52,17 @@ void delete_list(node*& head) {
 }
 
 // DA FINIRE
-bool delete_at_index(node*& head, const size_t index) {
+bool delete_at_index(node*& head, unsigned const int index) {
   if (head == nullptr) return false;
 
   node* temp = head;
-  if (head->next == nullptr) {
-    temp = head;
-    delete head;
-    head = nullptr;
+  if (index == 1) {
+    head = head->next;
+    delete temp;
     return true;
   }
 
-  for (unsigned int i = 1; i <= index; ++i) {
+  for (unsigned int i = 1; i <= index || temp != nullptr; ++i) {
     temp = temp->next;
     if (temp == nullptr) return false;
   }
@@ -75,6 +74,9 @@ int main() {
   add_tail(head, 60);
   add_head(head, 70);
 
+  print_list(head);
+
+  //delete_at_index(head, 2);
   print_list(head);
 
   delete_list(head);
