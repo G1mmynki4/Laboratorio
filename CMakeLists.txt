@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(Laboratorio
-#Libraries
+				#Libraries
         VectorLib/vettori.h
         VectorLib/vettori.cpp
         #Teoria/Array_multidim.cpp
@@ -14,6 +14,8 @@ add_executable(Laboratorio
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
 				Teoria/Liste2.cpp
+
+				#Lab8/Union.cpp
 				#"Lab4/Riferimenti.cpp"
         #"Lab4/Puntatori 1.cpp"
         #"Lab4/Puntatori 2.cpp"
