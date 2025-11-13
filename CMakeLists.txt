@@ -7,16 +7,16 @@ include_directories(.)
 
 add_executable(Laboratorio
         #Libraries
-        VectorLib/vettori.h
-        VectorLib/vettori.cpp
+        #VectorLib/vettori.h
+        #VectorLib/vettori.cpp
 
         #Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
-	Teoria/Liste2.cpp
+				#Teoria/Liste2.cpp
 
-	#"Lab4/Riferimenti.cpp"
+				#"Lab4/Riferimenti.cpp"
         #"Lab4/Puntatori 1.cpp"
         #"Lab4/Puntatori 2.cpp"
         #"Lab4/Puntatori 3.cpp"
@@ -26,5 +26,6 @@ add_executable(Laboratorio
         #"Lab6/Concatena vettori 6.2.cpp"
         #"Lab6/Stringa Palindroma 6.3.cpp"
         #"Lab6/Ruota Vettore6.3.cpp"
-        #Lab8/Union.cpp
+        #"Lab8/Union.cpp"
+				"Lab8/Cristian/main.cpp"
 )
