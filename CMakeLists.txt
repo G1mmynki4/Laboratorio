@@ -27,5 +27,6 @@ add_executable(Laboratorio
         #"Lab6/Stringa Palindroma 6.3.cpp"
         #"Lab6/Ruota Vettore6.3.cpp"
         #"Lab8/Union.cpp"
-				"Lab8/Cristian/main.cpp"
+        #"Lab8/Cristian/main.cpp"
+        "Lab8/Uso debuger 1 8.1.cpp"
 )
