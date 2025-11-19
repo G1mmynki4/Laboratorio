@@ -49,7 +49,7 @@ int main() {
   st2.push(2);*/
 
   Complesso c1;
-  c1.init_Complex(-4, 5);
+  c1.init_Complex(-4, 5); //E' lo stesso che scrivere Complesso::init_Complex(&c1, -4, 5);
   c1.scrivi_Complex();
   cout<<c1.getReal()<<endl;
   cout<<c1.getImag()<<endl;
