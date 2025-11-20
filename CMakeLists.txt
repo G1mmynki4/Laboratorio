@@ -13,8 +13,10 @@ add_executable(Laboratorio
         "Teoria/lib_vett.cpp"
 
         #Programs
-        "Teoria/classi.cpp"
-        #Teoria/Array_multidim.cpp
+				#"Teoria/classi.cpp"
+				Teoria/ptr_this.cpp
+	Teoria/funzioni_inline.cpp
+	#Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
