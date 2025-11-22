@@ -6,9 +6,7 @@ using namespace std;
 const int DIM = 31;
 
 void Iscrizione::init() {
-
-  iscritti * head;
-  head = nullptr;
+  list = nullptr;
 }
 
 bool Iscrizione::aggiungi(const char *nome, const int pettorale) {
@@ -65,10 +63,24 @@ bool Iscrizione::cerca(const char * nome) {
       return true;
     node = node->next;
   }
+
+  return false;
 }
 
 bool Iscrizione::elimina(const char* nome) {
+    iscritti* tmp, *toDel;
 
+    for(toDel = list; (toDel!= nullptr) && (strcmp(toDel->name, nome) != 0); toDel = toDel->next)
+        tmp = toDel;
 
+    if (toDel == nullptr)
+        return false;
+
+    if(toDel == list) // eliminazione in testa
+        list = toDel->next;
+    else
+        tmp->next = toDel->next;
+
+    delete toDel;
+    return true;
 }
-

@@ -55,6 +55,32 @@ void visualizza(iscritti *head) {
   }
 }
 
-//Da completare
+bool cerca(iscritti *list, const char * nome) {
+  iscritti* node = list;
 
+  while (node!=nullptr) {
+    if (strcmp(node->name, nome)== 0)
+      return true;
+    node = node->next;
+  }
 
+  return false;
+}
+
+bool elimina(iscritti *&list, const char* nome) {
+    iscritti* tmp, *toDel;
+    // scorro finche' non trovo l'atleta con quel nome o finche' non finisce la lista
+    for(toDel = list; (toDel!= nullptr) && (strcmp(toDel->name, nome) != 0); toDel = toDel->next)
+        tmp = toDel;
+
+    if (toDel == nullptr)
+        return false;
+
+    if(toDel == list) // eliminazione in testa
+        list = toDel->next;
+    else
+        tmp->next = toDel->next;
+
+    delete toDel;
+    return true;
+}

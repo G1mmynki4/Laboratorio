@@ -14,9 +14,9 @@ int main() {
   L.aggiungi("gianni.verdi", 32);
   L.aggiungi("luigi.neri", 6); // gia' presente
   L.visualizza();
-  //cout << L.cerca("mario.bianchi") << endl;
-  //L.elimina("mario.bianchi");
-  //cout << L.cerca("mario.bianchi") << endl;
-  //L.visualizza();
+  cout << L.cerca("mario.bianchi") << endl;
+  L.elimina("mario.bianchi");
+  cout << L.cerca("mario.bianchi") << endl;
+  L.visualizza();
   return 0;
 }

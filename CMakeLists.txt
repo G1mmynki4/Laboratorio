@@ -11,6 +11,7 @@ add_executable(Laboratorio
         VectorLib/vettori.cpp
         "Teoria/lib_vett.h"
         "Teoria/lib_vett.cpp"
+
         #Lab 9
         "Lab9/Lab9 Include/iscrizione.h"
         "Lab9/Lab9 Include/iscrizione.cpp"
@@ -22,7 +23,7 @@ add_executable(Laboratorio
         #"Teoria/classi.cpp"
         #Teoria/ptr_this.cpp
         #Teoria/funzioni_inline.cpp
-	    #Teoria/Array_multidim.cpp
+	#Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
@@ -45,8 +46,8 @@ add_executable(Laboratorio
         #"Lab8/Cristian/main.cpp"
         #"Lab8/Uso debuger 1 8.1.cpp"
 
-        #"Lab9/Gestione iscrizioni 9.1.cpp"
-        "Lab9/Gestione iscrizione classe 9.1.cpp"
+        "Lab9/Gestione iscrizioni 9.1.cpp"
+        #"Lab9/Gestione iscrizione classe 9.1.cpp"
 
 
 )

@@ -8,4 +8,6 @@ struct iscritti {
 
 void init(iscritti* &);
 bool aggiungi(iscritti* &, const char*, const int);
+bool elimina(iscritti *&, const char *);
+bool cerca(iscritti *, const char*);
 void visualizza(iscritti*);
