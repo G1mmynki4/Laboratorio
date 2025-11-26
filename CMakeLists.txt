@@ -9,9 +9,9 @@ add_executable(Laboratorio
         #Libraries
         VectorLib/vettori.h
         VectorLib/vettori.cpp
-        "Teoria/lib_vett.h"
-        "Teoria/lib_vett.cpp"
-        "Teoria/Classi/Classe pila.h"
+        "Teoria/Unità di compilazione/lib_vett.h"
+        "Teoria/Unità di compilazione/lib_vett.cpp"
+        "Teoria/Classi/Classe complesso.h"
 
         #Lab 9
         "Lab9/Lab9 Include/iscrizione.h"
@@ -21,8 +21,9 @@ add_executable(Laboratorio
 
 
         #Programs
-        "Teoria/Classi/Classe n complessi.cpp"
-        Teoria/Classi/Costruttori.cpp
+        #"Teoria/Classi/Classe n complessi.cpp"
+        "Teoria/Classi/Costruttori.cpp"
+        "Teoria/Classi/Funzioni friend.cpp"
         #"Teoria/Classi/Classe pila.cpp"
         #"Teoria/Classi/ptr_this.cpp"
         #Teoria/funzioni_inline.cpp
@@ -31,7 +32,7 @@ add_executable(Laboratorio
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
         #Teoria/Liste2.cpp
-        #"Teoria/Unità di compilazione.cpp"
+        #"Teoria/Unità di compilazione/Unità di compilazione.cpp"
         #"Teoria/alg_ord.cpp"
 
         #"Lab4/Riferimenti.cpp"

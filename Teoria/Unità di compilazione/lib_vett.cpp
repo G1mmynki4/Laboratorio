@@ -1,4 +1,4 @@
-#include  "lib_vett.h"
+#include "lib_vett.h"
 #include <iostream>
 
 const double pi = 3.14; //Collegamento INTERNO, non manda in conflitto il linker
