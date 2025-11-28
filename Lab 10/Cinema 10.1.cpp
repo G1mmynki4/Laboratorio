@@ -18,11 +18,11 @@ int main(){
  c.stampa();
  c.cancella('B',4);
  c.stampa();
+
  // SECONDA PARTE
- /*
  cout << "Il numero di posti liberi in c e': " << c.quantiLiberi() << endl;
- c.prenotaAdiacenti(4);
- c.stampa();
- */
+ //c.prenotaAdiacenti(4);
+ //c.stampa();
+
  return 0;
 }

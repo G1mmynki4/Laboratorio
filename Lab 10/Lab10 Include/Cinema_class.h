@@ -15,4 +15,8 @@ public:
   bool prenota(char l, int j);
   bool cancella(char l, int j);
   void stampa();
+
+  //Seconda parte
+  int quantiLiberi();
+  bool prenotaAdiacenti(int k);
 };

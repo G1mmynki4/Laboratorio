@@ -11,10 +11,16 @@ Cinema::Cinema(int n, int p, char s[]) {
   if(strlen(s) < nDIM-1)
     strcpy(nome, s);
 
-  //Creo un array booleano che contiene file e posti
+  //Creo una matrice lineare booleana che contiene file e posti
   matr = new bool[n*p];
 
-  posti = p;
+  if(p<=9)
+    posti = p;
+  else
+    cerr << "Il numero di posti massimi per fila consentito e' 7\n";
+  posti = 7;
+
+  //Assegno le file totali
   ftot = n;
 
   for (int i=0; i<posti*ftot;++i)
@@ -83,3 +89,13 @@ void Cinema::stampa() {
  }
 
 
+//Inizio  seconda parte
+int Cinema::quantiLiberi(){
+  int out = 0;
+
+  for (int i = 0; i < posti * ftot; ++i)
+    if(!matr[i])
+      ++out;
+      
+  return out;
+}
