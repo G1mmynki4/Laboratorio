@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "Lab9/Lab9 Include/iscrizione.h"
+#include "Lab 9/Lab9 Include/iscrizione.h"
 
 using namespace std;
 

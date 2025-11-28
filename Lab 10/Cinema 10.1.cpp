@@ -15,9 +15,9 @@ int main(){
  c.prenota('C',6);
  c.prenota('C',7);
  c.prenota('B',4);
-  c.stampa();
+ c.stampa();
  c.cancella('B',4);
- //c.stampa();
+ c.stampa();
  // SECONDA PARTE
  /*
  cout << "Il numero di posti liberi in c e': " << c.quantiLiberi() << endl;
