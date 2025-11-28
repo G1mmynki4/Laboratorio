@@ -14,10 +14,10 @@ add_executable(Laboratorio
         "Teoria/Classi/Classe complesso.h"
 
         #Lab 9
-        "Lab9/Lab9 Include/iscrizione.h"
-        "Lab9/Lab9 Include/iscrizione.cpp"
-        "Lab9/Lab9 Include/class_iscrizione.cpp"
-        "Lab9/Lab9 Include/class_iscrizione.h"
+        "Lab 9/Lab9 Include/iscrizione.h"
+        "Lab 9/Lab9 Include/iscrizione.cpp"
+        "Lab 9/Lab9 Include/class_iscrizione.cpp"
+        "Lab 9/Lab9 Include/class_iscrizione.h"
         #"Lab9/Gestione iscrizioni 9.1.cpp"
         #"Lab9/Gestione iscrizione classe 9.1.cpp"
 
@@ -42,20 +42,20 @@ add_executable(Laboratorio
         #"Teoria/Unità di compilazione/Unità di compilazione.cpp"
         #"Teoria/alg_ord.cpp"
 
-        #"Lab4/Riferimenti.cpp"
-        #"Lab4/Puntatori 1.cpp"
-        #"Lab4/Puntatori 2.cpp"
-        #"Lab4/Puntatori 3.cpp"
-        #"Lab4/Funzione con valori di ritorno multipli.cpp"
+        #"Lab 4/Riferimenti.cpp"
+        #"Lab 4/Puntatori 1.cpp"
+        #"Lab 4/Puntatori 2.cpp"
+        #"Lab 4/Puntatori 3.cpp"
+        #"Lab 4/Funzione con valori di ritorno multipli.cpp"
 
-        #"Lab6/Somma pari di vettori 6.1.cpp"
-        #"Lab6/Concatena vettori 6.2.cpp"
-        #"Lab6/Stringa Palindroma 6.3.cpp"
-        #"Lab6/Ruota Vettore6.3.cpp"
+        #"Lab 6/Somma pari di vettori 6.1.cpp"
+        #"Lab 6/Concatena vettori 6.2.cpp"
+        #"Lab 6/Stringa Palindroma 6.3.cpp"
+        #"Lab 6/Ruota Vettore6.3.cpp"
 
-        #"Lab8/Union.cpp"
-        #"Lab8/Cristian/main.cpp"
-        #"Lab8/Uso debuger 1 8.1.cpp"
+        #"Lab 8/Union.cpp"
+        #"Lab 8/Cristian/main.cpp"
+        #"Lab 8/Uso debuger 1 8.1.cpp"
 
 
 
