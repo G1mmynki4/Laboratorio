@@ -18,12 +18,19 @@ add_executable(Laboratorio
         "Lab9/Lab9 Include/iscrizione.cpp"
         "Lab9/Lab9 Include/class_iscrizione.cpp"
         "Lab9/Lab9 Include/class_iscrizione.h"
+        #"Lab9/Gestione iscrizioni 9.1.cpp"
+        #"Lab9/Gestione iscrizione classe 9.1.cpp"
 
+        #Lab 10
+        "Lab 10/Cinema 10.1.cpp"
+        "Lab 10/Lab10 Include/Cinema_class.cpp"
+        "Lab 10/Lab10 Include/Cinema_class.h"
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
-        "Teoria/Classi/Costruttori.cpp"
-        "Teoria/Classi/Funzioni friend.cpp"
+        #"Teoria/Classi/Costruttori.cpp"
+        #"Teoria/Classi/Funzioni friend.cpp"
+        #"Teoria/Classi/Costruttori di copia.cpp"
         #"Teoria/Classi/Classe pila.cpp"
         #"Teoria/Classi/ptr_this.cpp"
         #Teoria/funzioni_inline.cpp
@@ -50,8 +57,6 @@ add_executable(Laboratorio
         #"Lab8/Cristian/main.cpp"
         #"Lab8/Uso debuger 1 8.1.cpp"
 
-        #"Lab9/Gestione iscrizioni 9.1.cpp"
-        #"Lab9/Gestione iscrizione classe 9.1.cpp"
 
 
 )
