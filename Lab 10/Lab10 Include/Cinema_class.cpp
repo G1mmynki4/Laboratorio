@@ -10,18 +10,29 @@ Cinema::Cinema(int n, int p, char s[]) {
 
   if(strlen(s) < nDIM-1)
     strcpy(nome, s);
+  else{
+    cerr << "Il nome del cinema supera il numero massimo di caratteri consentito\n";
+    strcpy(nome, "\0");
+  }
 
-  //Creo una matrice lineare booleana che contiene file e posti
-  matr = new bool[n*p];
-
-  if(p<=9)
+  //Assegno i posti per fila
+  if(p <= 9)
     posti = p;
-  else
-    cerr << "Il numero di posti massimi per fila consentito e' 7\n";
-  posti = 7;
+  else{
+    cerr << "\nIl numero di posti massimi per fila consentito e' 9\n";
+    posti = 9;
+  }
 
   //Assegno le file totali
-  ftot = n;
+  if(n <= 26)
+    ftot = n;
+  else{
+    cerr << "\nIl numero massimo di file e' 26\n";
+    ftot = 26;
+  }
+
+  //Creo una matrice lineare booleana che contiene file e posti
+  matr = new bool[ftot*posti];
 
   for (int i=0; i<posti*ftot;++i)
     matr[i] = 0;
@@ -37,12 +48,23 @@ Cinema::~Cinema(){
 
 bool Cinema::prenota(char l, int j) {
   int fila = l-'A';
-  //cout<<endl;
-  //cout<<"Fila prenota = "<<fila<<endl;
 
+  //Error handling
+  if(fila>ftot-1){
+    cerr << "Impossibile prenotare in una fila inesistente\n";
+    return false;
+  }
+  if(j < 0)
+    j = -j;
+  if(j>posti){
+    cerr << "Impossibile prenotare un posto inesistente \n";
+    return false;
+  }
+
+  //Prenotazione posti
   if (!matr[posti*fila + (j-1)]) {
     matr[posti*fila + (j-1)] = 1;
-    cout<<"Prenotato posto"<<posti*fila + (j-1)<<endl;
+    //DEBUG TEXTcout<<"Prenotato posto"<<posti*fila + (j)<<endl;
     return true;
   }
   return false;
@@ -51,12 +73,25 @@ bool Cinema::prenota(char l, int j) {
 
 bool Cinema::cancella(char l, int j) {
   int fila = l-'A';
-  //cout<<endl;
-  //cout<<"Fila prenota = "<<fila<<endl;
 
+  //Error handling
+  if(fila>ftot-1){
+    cerr << "Impossibile cancellare in una fila inesistente\n";
+    return false;
+  }
+
+  if(j < 0)
+    j = -j;
+
+  if(j>posti){
+    cerr << "Impossibile cancellare un posto inesistente \n";
+    return false;
+  }
+
+  //Cancellazione posti
   if (matr[posti*fila + (j-1)]) {
     matr[posti*fila + (j-1)] = 0;
-    //cout<<"Cancellato posto"<<posti*fila + (j-1)<<endl;
+    //DEBUG TEXT cout<<"Cancellato posto"<<posti*fila + (j-1)<<endl;
     return true;
   }
   return false;
@@ -64,7 +99,10 @@ bool Cinema::cancella(char l, int j) {
 
 void Cinema::stampa() {
 
-  cout<<"Nome del cinema: "<<nome<<endl;
+  if(strlen(nome) == 0)
+    cout<<"\nNome del cinema: ERROR"<<nome<<endl;
+  else
+    cout<<"\nNome del cinema: "<<nome<<endl;
   cout<<" ";
 
   //Print del numero di posti per fila
@@ -98,4 +136,41 @@ int Cinema::quantiLiberi(){
       ++out;
       
   return out;
+}
+
+bool Cinema::prenotaAdiacenti(int k){
+  int adiac = 0, kfila; //kfila è la variabile che conterrà il valore della fila con sufficienti posti adiac. disp.
+
+  for (int fila = 0; adiac < k && fila < ftot; ++fila){
+    //Inizializzo adiac a zero ogni volta che passo ad una nuova fila
+    adiac = 0;
+    //Salvo il valore della fila corrente in una variabile utilizzabile al di fuori del ciclo for.
+    kfila = fila;
+    for (int i = 0; adiac < k && i < this->posti; ++i){
+
+       if(!matr[fila*posti + i] && adiac < k)
+         ++adiac;
+        else
+          adiac = 0;
+    }
+  }
+
+  if(adiac >= k){
+    for (int i = 1; i <= adiac; ++i)  //in questo caso i = 1 perchè la fun. prenota() scala in automatico di 1 il valore del posto passato. In quel caso j
+      prenota(('A' + kfila), i);
+
+    return true;
+  }
+  else
+    return false;
+  /*
+  if(adiac >= k){
+    for (int i = 0; i < adiac; ++i)
+      matr[kfila * posti + i] = 1;
+
+    return true;
+  }
+  else
+    return false;
+    */
 }
