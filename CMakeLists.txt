@@ -22,9 +22,10 @@ add_executable(Laboratorio
         #"Lab9/Gestione iscrizione classe 9.1.cpp"
 
         #Lab 10
-        "Lab 10/Cinema 10.1.cpp"
-        "Lab 10/Lab10 Include/Cinema_class.cpp"
-        "Lab 10/Lab10 Include/Cinema_class.h"
+        #"Lab 10/Cinema 10.1.cpp"
+        #"Lab 10/Lab10 Include/Cinema_class.cpp"
+        #"Lab 10/Lab10 Include/Cinema_class.h"
+
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
@@ -34,13 +35,14 @@ add_executable(Laboratorio
         #"Teoria/Classi/Classe pila.cpp"
         #"Teoria/Classi/ptr_this.cpp"
         #Teoria/funzioni_inline.cpp
-	#Teoria/Array_multidim.cpp
+	    #Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
         #Teoria/Liste2.cpp
         #"Teoria/Unità di compilazione/Unità di compilazione.cpp"
         #"Teoria/alg_ord.cpp"
+        "Teoria/Ovverride operatori/override op.cpp"
 
         #"Lab 4/Riferimenti.cpp"
         #"Lab 4/Puntatori 1.cpp"
