@@ -2,7 +2,9 @@
 #include <cstring>
 using namespace std;
 
-//To be completed
+///////////////////////
+///Classe stringa  ///
+/////////////////////
 class stringa {
   char* str;
 public:
@@ -39,7 +41,7 @@ stringa::stringa(char[]) {
 
 }
 
-
+//More info at: https://docenti.ing.unipi.it/m.cococcioni/FdP/soluzioni_alternative_per_la_definizione_del_complesso_coniugato.cpp
 
 
 //////////////////////////////////////

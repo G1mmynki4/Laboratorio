@@ -42,7 +42,9 @@ add_executable(Laboratorio
         #Teoria/Liste2.cpp
         #"Teoria/Unità di compilazione/Unità di compilazione.cpp"
         #"Teoria/alg_ord.cpp"
-        "Teoria/Ovverride operatori/override op.cpp"
+        #"Teoria/Ovverride operatori/override op.cpp"
+        #"Teoria/Ovverride operatori/operatori di conversione.cpp"
+        "Teoria/Ovverride operatori/ovverride ostream.cpp"
 
         #"Lab 4/Riferimenti.cpp"
         #"Lab 4/Puntatori 1.cpp"
