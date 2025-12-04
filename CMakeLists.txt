@@ -14,10 +14,10 @@ add_executable(Laboratorio
         #"Teoria/Classi/Classe complesso.h"
 
         #Lab 9
-        "Lab 9/Lab9 Include/iscrizione.h"
-        "Lab 9/Lab9 Include/iscrizione.cpp"
-        "Lab 9/Lab9 Include/class_iscrizione.cpp"
-        "Lab 9/Lab9 Include/class_iscrizione.h"
+        #"Lab 9/Lab9 Include/iscrizione.h"
+        #"Lab 9/Lab9 Include/iscrizione.cpp"
+        #"Lab 9/Lab9 Include/class_iscrizione.cpp"
+        #"Lab 9/Lab9 Include/class_iscrizione.h"
         #"Lab9/Gestione iscrizioni 9.1.cpp"
         #"Lab9/Gestione iscrizione classe 9.1.cpp"
 
@@ -26,6 +26,10 @@ add_executable(Laboratorio
         #"Lab 10/Lab10 Include/Cinema_class.cpp"
         #"Lab 10/Lab10 Include/Cinema_class.h"
 
+        #Lab 11
+        "Lab 11/Lab11 include/palazzo_class.cpp"
+        "Lab 11/Lab11 include/palazzo_class.h"
+        "Lab 11/Palazzo 11.1.cpp"
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
@@ -45,7 +49,7 @@ add_executable(Laboratorio
         #"Teoria/Ovverride operatori/override op.cpp"
         #"Teoria/Ovverride operatori/operatori di conversione.cpp"
         #"Teoria/Ovverride operatori/ovverride ostream.cpp"
-        "Teoria/Funzioni ricorsive.cpp"
+        #"Teoria/Funzioni ricorsive.cpp"
 
         #"Lab 4/Riferimenti.cpp"
         #"Lab 4/Puntatori 1.cpp"
