@@ -7,8 +7,8 @@ include_directories(.)
 
 add_executable(Laboratorio
         #Libraries
-        VectorLib/vettori.h
-        VectorLib/vettori.cpp
+        #VectorLib/vettori.h
+        #VectorLib/vettori.cpp
         #"Teoria/Unità di compilazione/lib_vett.h"
         #"Teoria/Unità di compilazione/lib_vett.cpp"
         #"Teoria/Classi/Classe complesso.h"

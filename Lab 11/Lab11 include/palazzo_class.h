@@ -16,6 +16,8 @@ public:
 
   //Seconda parte
   ~Palazzo();
+  int operator!();
   void cambia(int i, int j);
+  void operator%=(Palazzo p);
 };
 

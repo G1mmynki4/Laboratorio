@@ -19,12 +19,13 @@ Palazzo::Palazzo(Palazzo &p) {
   this->floor = p.floor;
 
   this->palazzo = new bool *[maxFloor];
+
   for (int i = 0; i<floor; ++i) {
 
     this->palazzo[i] = new bool[i];
 
-    for (int j = 0; j < i; ++j) {
-      this->palazzo[i][j] = palazzo[i][j];
+    for (int j = 0; j <= i; ++j) {
+      this->palazzo[i][j] = p.palazzo[i][j];
     }
   }
 
@@ -47,7 +48,8 @@ void Palazzo::stampa() {
 
   for (int i = 0; i < floor; ++i) {
     cout<<"Piano "<<i+1<<": ";
-    for (int j = 0; j < i+1; ++j) {
+
+    for (int j = 0; j <= i; ++j) {
       if (palazzo[i][j])
         cout<<"Aperta ";
       else
@@ -73,3 +75,24 @@ Palazzo::~Palazzo() {
   delete[] palazzo;
 }
 
+int Palazzo::operator!(){
+  int res;
+
+  for (int i = 0; i < floor; ++i)
+    for (int j = 0; j <= i; ++j)
+      if (palazzo[i][j]) // Se la finestra è aperta allora incrementa la variabile
+        ++res;
+
+  return res;
+}
+
+void Palazzo::operator%=(Palazzo p){
+  if(this->floor == p.floor){
+
+    for (int i = 0; i < floor; ++i)
+      for (int j = 0; j <= i; ++j) 
+        if (!p.palazzo[i][j])
+          this->palazzo[i][j] = false;;
+
+  }
+}
