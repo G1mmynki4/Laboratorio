@@ -27,9 +27,12 @@ add_executable(Laboratorio
         #"Lab 10/Lab10 Include/Cinema_class.h"
 
         #Lab 11
-        "Lab 11/Lab11 include/palazzo_class.cpp"
-        "Lab 11/Lab11 include/palazzo_class.h"
-        "Lab 11/Palazzo 11.1.cpp"
+        #"Lab 11/Lab11 include/palazzo_class.cpp"
+        #"Lab 11/Lab11 include/palazzo_class.h"
+        #"Lab 11/Palazzo 11.1.cpp"
+        "Lab 11/Palazzo 2.0/Include/palazzo.h"
+        "Lab 11/Palazzo 2.0/Include/palazzo.cpp"
+        "Lab 11/Palazzo 2.0/Palazzo 11.2.cpp"
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
