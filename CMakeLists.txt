@@ -30,9 +30,6 @@ add_executable(Laboratorio
         #"Lab 11/Lab11 include/palazzo_class.cpp"
         #"Lab 11/Lab11 include/palazzo_class.h"
         #"Lab 11/Palazzo 11.1.cpp"
-        "Lab 11/Palazzo 2.0/Include/palazzo.h"
-        "Lab 11/Palazzo 2.0/Include/palazzo.cpp"
-        "Lab 11/Palazzo 2.0/Palazzo 11.2.cpp"
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
@@ -41,6 +38,9 @@ add_executable(Laboratorio
         #"Teoria/Classi/Costruttori di copia.cpp"
         #"Teoria/Classi/Classe pila.cpp"
         #"Teoria/Classi/ptr_this.cpp"
+        #"Teoria/Classi/Costanti e ref dentro classi.cpp"
+        #"Teoria/Classi/membri dato statici.cpp"
+        #"Teoria/Classi/Funzioni membro const.cpp"
         #Teoria/funzioni_inline.cpp
 	    #Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
