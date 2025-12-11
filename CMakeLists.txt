@@ -31,6 +31,11 @@ add_executable(Laboratorio
         #"Lab 11/Lab11 include/palazzo_class.h"
         #"Lab 11/Palazzo 11.1.cpp"
 
+        #Lab 12
+        "Lab 12/PuzzleBobble.cpp"
+        "Lab 12/Include/compito.cpp"
+        "Lab 12/Include/compito.h"
+
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
         #"Teoria/Classi/Costruttori.cpp"
@@ -41,6 +46,8 @@ add_executable(Laboratorio
         #"Teoria/Classi/Costanti e ref dentro classi.cpp"
         #"Teoria/Classi/membri dato statici.cpp"
         #"Teoria/Classi/Funzioni membro const.cpp"
+        #Teoria/Preprocessori/preprocessore.cpp
+        #"Teoria/Ovverride operatori/Override op unari.cpp"
         #Teoria/funzioni_inline.cpp
 	    #Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
