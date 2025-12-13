@@ -17,6 +17,8 @@ char PuzzleBobble::toChar(const eColor c) {
   case eColor::YELLOW:
     return 'Y';
     break;
+  case eColor::BLOCKED:
+    return '=';
   default:
     return 'N';
     break;
@@ -49,6 +51,8 @@ PuzzleBobble::PuzzleBobble() {
     for (int j = 0; j < 6; ++j)
       mat[i][j] = eColor::NONE;
   }
+
+  maxHeight = 0;
 }
 
 ostream& operator<<(ostream& os, const PuzzleBobble& pb) {
@@ -68,18 +72,20 @@ ostream& operator<<(ostream& os, const PuzzleBobble& pb) {
   return os;
 }
 
+
 PuzzleBobble& PuzzleBobble::fire(int i, char color) {
   if (i>=0 && i<=5) {
 
-    for (int r = 0; r < 10; ++r) {
+    for (int r = maxHeight; r < 10; ++r) {
       if (this->mat[r][i] == eColor::NONE) {
         this->mat[r][i] = toEnum(color);
         return *this;
       }
-
     }
   }
+  return *this;
 }
+
 
 PuzzleBobble::operator int() const {
   int h;
@@ -95,4 +101,54 @@ PuzzleBobble::operator int() const {
 
 
 //Seconda parte
+/*
+PuzzleBobble& PuzzleBobble::fire(int i, char color) {
+  if (i>=0 && i<=5) {
+    int count = 0; // add = 1;
 
+    for (int r = maxHeight; r < 10; ++r) {
+      if (this->mat[r][i] == eColor::NONE) {
+        this->mat[r][i] = toEnum(color);
+        //return *this;
+      }
+
+      for (int add = 1; add <= 5; ++add){
+        if ((i + add) <= 5 && this->mat[r][i] == this->mat[r][i+add])
+          count++;
+
+        if ((i - add) >= 0 && this->mat[r][i] == this->mat[r][i-add])
+          count++;
+
+        if ((r - add) >= 0 && this->mat[r][i] == this->mat[r-add][i])
+          count++;
+      }
+    }
+  }
+  return *this;
+}
+*/
+
+PuzzleBobble& PuzzleBobble::scroll(){
+  if(maxHeight < 10){
+    
+    for (int c = 0; c < 6; ++c)
+      if (this->mat[9][c] != eColor::NONE)
+        return *this;
+
+    for (int r = 9; r > maxHeight; --r) {
+      for (int c = 0; c < 6; ++c){
+
+        if (this->mat[r - 1][c] != eColor::NONE){
+          this->mat[r][c] = this->mat[r - 1][c];
+          this->mat[r-1][c] = eColor::NONE;
+        }
+        
+        if(r == (maxHeight + 1))
+          this->mat[r-1][c] = eColor::BLOCKED;
+      }
+    }
+    ++maxHeight;
+    return *this;
+  }
+  return *this;
+}
