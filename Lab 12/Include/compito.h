@@ -16,6 +16,8 @@ class PuzzleBobble {
 
   static eColor toEnum(const char c);
 
+  int bubble_check(int rows, int cols, bool isAdiac); //Seconda parte
+
   eColor mat[10][6];
 
   int maxHeight;
@@ -29,5 +31,5 @@ public:
 
   //Seconda parte
   PuzzleBobble &scroll();
-
+  PuzzleBobble &compact();
 };

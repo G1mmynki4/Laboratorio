@@ -19,7 +19,7 @@ int main(){
  cout << "Test operatore int" << endl;
  cout << "Altezza: " << (int)pb << endl;
 
- /*// SECONDA PARTE:
+ // SECONDA PARTE:
  cout << "--- SECONDA PARTE ---" << endl;
  cout << "Test funzionalita' scoppio bolle" << endl;
  pb.fire(0,'B'); // scoppio verticale di 3 bolle
@@ -27,13 +27,13 @@ int main(){
  pb.fire(5,'Y').fire(4,'Y'); // scoppio orizzontale di 4 bolle
  pb.fire(3,'G'); // no scoppio
  cout << pb;
-*/
+
  cout << "Test funzione scroll" << endl;
  pb.scroll().scroll();
  cout << pb;
- //cout << "Test funzione compact" << endl;
- //pb.compact();
- //cout << pb;
+ cout << "Test funzione compact" << endl;
+ pb.compact();
+ cout << pb;
 
  return 0;
 }
