@@ -32,9 +32,14 @@ add_executable(Laboratorio
         #"Lab 11/Palazzo 11.1.cpp"
 
         #Lab 12
-        "Lab 12/PuzzleBobble.cpp"
-        "Lab 12/Include/compito.cpp"
-        "Lab 12/Include/compito.h"
+        #"Lab 12/PuzzleBobble.cpp"
+        #"Lab 12/Include/compito.cpp"
+        #"Lab 12/Include/compito.h"
+
+        #Appello 4 2025
+        "ExamTest/4_2025/include/compito.h"
+        "ExamTest/4_2025/include/compito.cpp"
+        "ExamTest/4_2025/Exam4.cpp"
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
@@ -49,7 +54,7 @@ add_executable(Laboratorio
         #Teoria/Preprocessori/preprocessore.cpp
         #"Teoria/Ovverride operatori/Override op unari.cpp"
         #Teoria/funzioni_inline.cpp
-	    #Teoria/Array_multidim.cpp
+	#Teoria/Array_multidim.cpp
         #Teoria/Din_Memory.cpp
         #Teoria/Matrici_Dinamiche.cpp
         #Teoria/Liste.cpp
