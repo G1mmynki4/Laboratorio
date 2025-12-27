@@ -24,7 +24,7 @@ int main() {
     ld.aggiungiLibro("Saggi", "Il mestiere di vivere", false); //non aggiunge perchÃ© lo scaffale ha esaurito la sua capacitÃ 
 
     cout << endl << ld;
-    /*
+    
     cout << endl << "--- SECONDA PARTE ---" << endl;
 
     cout << "Test costruttore di copia" << endl;
@@ -32,19 +32,20 @@ int main() {
     LibreriaDigitale ld2 = ld;
     ld2.aggiungiScaffale("Filosofia", 7);
     cout << endl << ld2;
-
+    
     cout << endl << "Test eventuale distruttore" << endl;
     {
         LibreriaDigitale ld1;
     }
     cout << "Distruttore chiamato" << endl;
 
+    /*
     cout << endl << "Test rimuoviLibro" << endl;
-
+    
     ld.rimuoviLibro("Narrativa", "Il nome della rosa");
     ld.rimuoviLibro("Narrativa", "I pilastri della Terra"); //non rimuove perche' libro non trovato
     cout << endl << ld;
-
+    
     cout << endl << "Test operatore complemento" << endl;
 
     LibreriaDigitale ld3 = ~ld;

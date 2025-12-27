@@ -89,3 +89,63 @@ ostream& operator<<(ostream &os, const LibreriaDigitale& ld){
     }
     return os;
 }
+
+//Seconda parte
+LibreriaDigitale::LibreriaDigitale(LibreriaDigitale& ld){
+    this->head = nullptr;
+
+    Scaffale *scpy = new Scaffale;
+    Libri *bcpy = new Libri;
+
+    for (scpy = ld.head; scpy != nullptr; scpy = scpy->next){
+        this->aggiungiScaffale(scpy->s_name, scpy->max);
+
+        for (bcpy = ld.head->ptr; bcpy != nullptr; bcpy = bcpy->next)
+            this->aggiungiLibro(scpy->s_name, bcpy->b_name, bcpy->isUsed);
+    }
+
+}
+
+LibreriaDigitale::~LibreriaDigitale(){
+    Scaffale *stodel = nullptr;
+    Libri *btodel = nullptr;
+
+    while(head != nullptr){
+        stodel = head;
+        head = head->next;
+
+        while(stodel->ptr != nullptr){
+            btodel = stodel->ptr;
+            stodel->ptr = stodel->next->ptr;
+            delete btodel;
+        }
+
+        delete stodel;
+    }
+}
+
+/*
+void LibreriaDigitale::rimuoviLibro(char nscaffale[], char title[]){
+    for (Scaffale *stmp = head; stmp != nullptr; stmp = stmp->next){
+        if(strcmp(nscaffale, stmp->s_name) == 0){
+            Libri *current = nullptr;
+            Libri *btodel = stmp->ptr;
+
+            while(btodel != nullptr){
+                if(strcmp(btodel->b_name, title) == 0){
+                    if(current != nullptr)
+                        current = stmp->next->ptr;
+                    else
+                        stmp->ptr = btodel->next;
+
+                    delete btodel;
+                    --stmp->nBook;
+                    return;
+                }
+                current = stmp->ptr;
+                stmp->ptr = stmp->next->ptr;
+            }
+        }
+    }
+}
+*/

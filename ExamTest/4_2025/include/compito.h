@@ -25,4 +25,12 @@ public:
     void aggiungiScaffale(char sname[], unsigned int capacity);
     bool aggiungiLibro(char nScaffale[], char bname[], bool isUsed);
     friend ostream &operator<<(ostream &os, const LibreriaDigitale &ld);
+
+    //Seconda parte
+    LibreriaDigitale(LibreriaDigitale &ld);
+    ~LibreriaDigitale();
+    void rimuoviLibro(char nscaffale[], char title[]);
+
+    //LibreriaDigitale operator~() const;
+    //LibreriaDigitale &operator!();
 };
