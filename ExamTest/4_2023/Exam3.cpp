@@ -22,11 +22,11 @@ int main()
    l1.registra('e', {2023,03,15}, {18,26}, "Applicazione 2 ha tentato di dividere per zero: arrestata");
    l1.registra('c', {2023,03,15}, {18,59}, "Buffer overflow nell'applicazione 3! Allarme di sicurezza!");
    cout << l1 << endl;
-/*
+
    cout << "Test della cancella:" << endl;
    l1.cancella("Evento che verra' cancellato");
    cout << l1 << endl;
-
+   
    // SECONDA PARTE
    cout << endl << "--- SECONDA PARTE ---" << endl;
    {
@@ -37,16 +37,17 @@ int main()
       l2.registra('e', {2023,03,15}, {18,40}, "ccc");
    }
    cout << "(distruttore invocato)" << endl;
-
+   
    cout << "Test della cancella overloaded:" << endl;
    l1.cancella({2023,03,15}, {18,04}, {2023,03,15}, {18,25});
    cout << l1 << endl;
 
+   
    cout << "Test della filtra:" << endl;
    Log *p_l3 = l1.filtra('i');
    cout << *p_l3 << endl;
    delete p_l3;
-
+   
    cout << "Test della biforca:" << endl;
    Log l4;
    l4.registra('e', {2023,03,15}, {18,07}, "L'applicazione 3 non puo' aprire la porta 80");
@@ -58,7 +59,7 @@ int main()
    Log *p_l5 = l1.biforca({2023,03,15}, {18,26}, l4);
    cout << *p_l5 << endl;
    delete p_l5;
-
+   
    // TERZA PARTE
    cout << endl << "--- TERZA PARTE ---" << endl;
    cout << "Test aggiuntivi della registra:" << endl;
@@ -129,6 +130,6 @@ int main()
    cout << *p_l3 << endl;
    delete p_l3;
 
-   */
+   
    return 0;
 }

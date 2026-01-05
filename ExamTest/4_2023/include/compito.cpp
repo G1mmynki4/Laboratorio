@@ -25,6 +25,27 @@ Log::ePriority Log::toEnum(const char c){
     }
 }
 
+char Log::toChar(const ePriority pr){
+    switch (pr)
+    {
+    case INFO:
+        return 'i';
+        break;
+    case WARN:
+        return 'w';
+        break;
+    case ERR:
+        return 'e';
+        break;
+    case CRIT:
+        return 'c';
+        break;
+    default:
+        return 'n';
+        break;
+    }
+}
+
 bool Log::isValidMsg(const char* msg){
     if(strlen(msg)>80 || strlen(msg) == 0)
         return false;
@@ -91,7 +112,7 @@ Log::Log(){
 void Log::registra(const char prio, const Date date, const Time time, const char msg[]){
     Event *newEv = new Event;
 
-    if(!isValidDate(date) || !isValidTime(time) || !isValidMsg(msg))
+    if(!isValidDate(date) || !isValidTime(time) || !isValidMsg(msg) || toEnum(prio) == INVALID)
         return;
     
     newEv->prio = toEnum(prio);
@@ -99,10 +120,14 @@ void Log::registra(const char prio, const Date date, const Time time, const char
     newEv->time = time;
     strcpy(newEv->msg, msg);
 
+    if(strcmp(msg, "(cancellato)") == 0)
+        newEv->IsDeleted = true;
+
     Event *cur, *tmp;
 
     for (cur = head; cur != nullptr && compare(cur->date, date, cur->time, time) <= 0; cur = cur->next)
         tmp = cur;
+    
     if(cur == head){
         head = newEv;
         newEv->next = cur;
@@ -111,6 +136,15 @@ void Log::registra(const char prio, const Date date, const Time time, const char
         tmp->next = newEv;
         newEv->next = cur;  
     }
+}
+
+void Log::cancella(const char* msg){
+    Event *tmp;
+
+    for (tmp = head; tmp != nullptr && (tmp->IsDeleted || strcmp(tmp->msg, msg)); tmp = tmp->next);
+    if(tmp == nullptr)
+        return;
+    tmp->IsDeleted = true;
 }
 
 ostream& operator<<(ostream& os, const Log& l){
@@ -141,10 +175,66 @@ ostream& operator<<(ostream& os, const Log& l){
         Log::printDate(os, e->time.min);
         os << ",";
         if(e->IsDeleted)
-            os << "(cancellato)" << endl;
+            os << " (cancellato)" << endl;
         else
-            os << e->msg << endl;
+            os <<" "<< e->msg << endl;
     }
     os << "--- FINE LOG ---" << endl;
     return os;
+}
+
+//Seconda Parte
+Log::~Log(){
+    Event *toDel;
+    while(head != nullptr){
+        toDel = head;
+        head = head->next;
+        delete toDel;
+    }
+}
+
+void Log::cancella(const Date da_data, const Time da_ora, const Date a_data, const Time a_ora){
+    Event *tmp;
+    for (tmp = head; tmp != nullptr; tmp = tmp->next)
+        if(compare(da_data, tmp->date, da_ora, tmp->time)<=0 &&
+           compare(a_data, tmp->date, a_ora, tmp->time)>=0){
+            strcpy(tmp->msg, "(cancellato)");
+            tmp->IsDeleted = true;
+        }
+}
+
+Log* Log::filtra(const char prio){
+    ePriority pr = toEnum(prio);
+    if(pr==INVALID)
+        return nullptr;
+
+    Log *filter = new Log;
+    Event *tmp;
+
+    for (tmp = head; tmp != nullptr; tmp = tmp->next){
+        if(!tmp->IsDeleted && tmp->prio == pr){
+            filter->registra(tmp->prio, tmp->date, tmp->time, tmp->msg);
+        }
+    }
+    return filter;
+}
+
+Log* Log::biforca(const Date data, const Time ora, const Log& l2){
+    Log* bif = new Log;
+
+    Event *newHead = l2.head;
+    Event *tmp;
+
+    for (tmp = head; tmp != nullptr; tmp = tmp->next){
+        if(compare(tmp->date, data, tmp->time, ora)<=0){
+            bif->registra(toChar(tmp->prio), tmp->date, tmp->time, tmp->msg);
+        }
+    }
+
+    for (tmp = newHead; tmp != nullptr; tmp = tmp->next){
+        if(compare(tmp->date, data, tmp->time, ora) > 0)
+            bif->registra(toChar(tmp->prio), tmp->date, tmp->time, tmp->msg);
+    }
+
+    return bif;
 }

@@ -32,15 +32,23 @@ class Log{
 
     //Funzioni di controllo/utilità
     static ePriority toEnum(const char);
+    static char toChar(const ePriority);
     static bool isValidMsg(const char*);
     static bool isValidDate(const Date);
     static bool isValidTime(const Time);
     static int compare(const Date, const Date, const Time, const Time);
     static void printDate(std::ostream &, const int);
+    
 public:
     //Prima parte
     Log();
     void registra(const char, const Date, const Time, const char*);
     void cancella(const char *);
     friend std::ostream &operator<<(std::ostream &, const Log &);
+
+    //Seconda parte
+    ~Log();
+    void cancella(const Date, const Time, const Date, const Time);
+    Log *filtra(const char);
+    Log *biforca(const Date, const Time, const Log &);
 };
