@@ -116,6 +116,7 @@ http-client.private.env.json
 *.env
 *.exe
 *json
+*.pdf
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
