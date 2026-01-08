@@ -36,6 +36,11 @@ add_executable(Laboratorio
         #"Lab 12/Include/compito.cpp"
         #"Lab 12/Include/compito.h"
 
+        #Appello 1 2026
+        "ExamTest/1_2026/include/compito.h"
+        "ExamTest/1_2026/include/compito.cpp"
+        "ExamTest/1_2026/Exam1.cpp"
+
         #Appello 4 2025
         #"ExamTest/4_2025/include/compito.h"
         #"ExamTest/4_2025/include/compito.cpp"
@@ -47,9 +52,9 @@ add_executable(Laboratorio
         #"ExamTest/4_2023/Exam3.cpp"
 
         #Appello 1 2022
-        "ExamTest/1_2022/include/compito.h"
-        "ExamTest/1_2022/include/compito.cpp"
-        "ExamTest/1_2022/Exam1.cpp"
+        #"ExamTest/1_2022/include/compito.h"
+        #"ExamTest/1_2022/include/compito.cpp"
+        #"ExamTest/1_2022/Exam1.cpp"
 
         #Programs
         #"Teoria/Classi/Classe n complessi.cpp"
