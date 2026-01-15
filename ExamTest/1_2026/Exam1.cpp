@@ -17,19 +17,20 @@ int main() {
     cc.assumiFarmaci(2, 18);
     cout << endl << cc;
 
-    /*
+    
 	cout << endl << "--- SECONDA PARTE ---" << endl;
 	
     cout << "Test costruttore di copia" << endl;
     CasaDiCura cc2(cc);
     cout << endl << cc2;
-
+    
     cout << endl << "Test eventuale distruttore" << endl;
     {
-        CasaDiCura cc1("Prova", 1);
+        //CasaDiCura cc1("Prova", 1);
+        CasaDiCura cc2(cc);
     }
     cout << "Distruttore chiamato" << endl;
-
+    /*
     cout << endl << "Test rimuoviFarmaco" << endl;
     CasaDiCura cc3 = cc.rimuoviFarmaco(2, "Tachipirina");
     cout << endl << cc3;

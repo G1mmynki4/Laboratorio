@@ -36,4 +36,6 @@ public:
     bool assumiFarmaci(int, int);
 
     //Seconda Parte
+    CasaDiCura(const CasaDiCura &);
+    ~CasaDiCura();
 };

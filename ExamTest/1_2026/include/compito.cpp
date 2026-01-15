@@ -30,6 +30,9 @@ CasaDiCura::CasaDiCura(const char* name, int gNum){
     nGuests = 0;
 
     head = nullptr;
+    if(gNum <= 0 )
+        gNum = 3;
+
     for (int i = 0; i < gNum; ++i){
         ++nGuests;
         initGuest();
@@ -144,3 +147,75 @@ bool CasaDiCura::assumiFarmaci(int id, int time){
 }
 
 //Seconda parte
+CasaDiCura::CasaDiCura(const CasaDiCura& cc){
+    strcpy(cName, cc.cName);
+    nGuests = cc.nGuests;
+    head = nullptr;
+
+    Guest *gTmp = cc.head;
+
+    while(gTmp){
+
+        Guest *toCopy = new Guest;
+        toCopy->guestId = gTmp->guestId;
+        toCopy->med = nullptr;     //actual head to copy meds into
+        toCopy->next = nullptr;
+
+        //Starting copy of meds list
+        Meds *mTmp = gTmp->med;     //meds Head
+        while(mTmp){
+            Meds *toCopyM = new Meds;
+
+            strcpy(toCopyM->mName, mTmp->mName);    //Init new meds
+            toCopyM->taken = mTmp->taken;
+            toCopyM->time = mTmp->time;
+            toCopyM->next = nullptr;
+
+            if(toCopy->med == nullptr)
+                toCopy->med = toCopyM;
+            else{
+
+                Meds *mHead, *mCur;
+
+                for (mHead = toCopy->med; mHead != nullptr; mHead = mHead->next)
+                    mCur = mHead;
+
+                mCur->next = toCopyM;
+            }
+
+            mTmp = mTmp->next;
+        }
+        //end copy of meds list
+
+        //after the 'toCopy' member is completed, we can link it to the class
+        if(head == nullptr)
+            head = toCopy;
+        else{
+            Guest *nHead, *nCur = nullptr;
+            for (nHead = head; nHead != nullptr; nHead = nHead->next)
+                nCur = nHead;
+
+            nCur->next = toCopy;
+        }
+        
+        gTmp = gTmp->next;
+    }
+}
+
+CasaDiCura::~CasaDiCura(){
+    Guest *toDelG;
+
+    while(head != nullptr){
+        toDelG = head;
+        head = head->next;
+
+        Meds *toDelM;
+        while(toDelG->med != nullptr){
+            toDelM = toDelG->med;
+            toDelG->med = toDelG->med->next;
+            delete toDelM;
+        }
+
+        delete toDelG;
+    }
+}
