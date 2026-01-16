@@ -26,15 +26,14 @@ int main() {
     
     cout << endl << "Test eventuale distruttore" << endl;
     {
-        //CasaDiCura cc1("Prova", 1);
-        CasaDiCura cc2(cc);
+        CasaDiCura cc1("Prova", 1);
     }
     cout << "Distruttore chiamato" << endl;
-    /*
+    
     cout << endl << "Test rimuoviFarmaco" << endl;
     CasaDiCura cc3 = cc.rimuoviFarmaco(2, "Tachipirina");
     cout << endl << cc3;
-
+    /*
     cout << endl << "Test operatore negazione" << endl;
     !cc;
     cout << endl << cc;

@@ -219,3 +219,44 @@ CasaDiCura::~CasaDiCura(){
         delete toDelG;
     }
 }
+
+CasaDiCura CasaDiCura::rimuoviFarmaco(const int id, const char* medName){
+    CasaDiCura cc = *this;
+
+    if(id < 0 || id > nGuests)
+        return cc;
+
+    if(strlen(medName) > MLEN)
+        return cc;
+
+    Guest *gTmp, *gCur;
+
+    for (gTmp = cc.head; gTmp != nullptr; gTmp = gTmp->next){
+        gCur = gTmp;
+
+        if(gCur->guestId == id){
+            Meds *mTmp = gTmp->med, *mPrev;
+
+            if(mTmp != nullptr && strcmp(mTmp->mName, medName) == 0){
+                gTmp->med = gTmp->med->next;
+                delete mTmp;
+                return cc;
+            }
+
+            while(mTmp != nullptr && strcmp(mTmp->mName, medName) != 0){
+                mPrev = mTmp;
+                mTmp = mTmp->next;
+            }
+
+            if(mPrev == nullptr)
+                return cc;
+
+            mPrev->next = mTmp->next;
+
+            delete mTmp;
+            return cc;
+        }
+    }
+
+    return cc;
+}

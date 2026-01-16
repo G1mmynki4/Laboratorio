@@ -38,4 +38,5 @@ public:
     //Seconda Parte
     CasaDiCura(const CasaDiCura &);
     ~CasaDiCura();
+    CasaDiCura rimuoviFarmaco(const int, const char *);
 };
