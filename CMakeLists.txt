@@ -37,9 +37,14 @@ add_executable(Laboratorio
         #"Lab 12/Include/compito.h"
 
         #Appello 1 2026
-        "ExamTest/1_2026/include/compito.h"
-        "ExamTest/1_2026/include/compito.cpp"
-        "ExamTest/1_2026/Exam1.cpp"
+        #"ExamTest/1_2026/include/compito.h"
+        #"ExamTest/1_2026/include/compito.cpp"
+        #"ExamTest/1_2026/Exam1.cpp"
+
+        #Appello 4 2024
+        "ExamTest/4_2024/include/compito.h"
+        "ExamTest/4_2024/include/compito.cpp"
+        "ExamTest/4_2024/Exam4.cpp"
 
         #Appello 4 2025
         #"ExamTest/4_2025/include/compito.h"
