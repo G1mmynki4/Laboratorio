@@ -33,7 +33,7 @@ int main(){
     ov2.aggiungi("Oggetto 3");
     cout << ov2 << endl;
 
-    /*
+    
     cout << "--- SECONDA PARTE ---" << endl;
     cout << "Test eventuale distruttore" << endl;
     {
@@ -43,7 +43,7 @@ int main(){
         ov3.aggiungi("Oggetto 3");
     }
     cout << "Distruttore chiamato" << endl;
-
+    
     cout << "Test operatore +=" << endl;
     ov.prendi("Cuffie");
     ov.prendi("Macchina fotografica");
@@ -54,19 +54,19 @@ int main(){
     ov3.prendi("Occhiali da sole");
     ov += ov3;
     cout << ov << endl;
-
+    
     cout << "Test funzione rimuovi" << endl;
     ov.rimuovi("Cuffie");
     ov.rimuovi("Macchina fotografica");
     ov.rimuovi("Caricatore");
     cout << ov << endl;
-
+    
     cout << "Test operatore di negazione logica" << endl;
     ov.prendi("Vestiti");
     ov.prendi("Documenti");
     cout << !ov << endl;
 
-
+    
     cout << "--- TERZA PARTE ---" << endl;
     cout << "Test funzione aggiungi con input non validi" << endl;
     ov.aggiungi("Oggetto di lunghezza maggiore di quaranta caratteri"); // non aggiunge
@@ -104,6 +104,6 @@ int main(){
     ov5.aggiungi("Phono");
     ov += ov5;
     cout << ov << endl;
-    */
+    
     return 0;
 }

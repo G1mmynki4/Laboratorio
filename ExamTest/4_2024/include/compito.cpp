@@ -9,9 +9,9 @@ OggettiViaggio::OggettiViaggio(){
 //Copy constructor
 OggettiViaggio::OggettiViaggio(const OggettiViaggio& ov){
 
-    Objects *tmpHead = nullptr;
+    Object *tmpHead = nullptr;
     this->head = nullptr;
-    
+
     for (tmpHead = ov.head; tmpHead != nullptr; tmpHead = tmpHead->next){
         this->aggiungi(tmpHead->descr);
 
@@ -22,7 +22,7 @@ OggettiViaggio::OggettiViaggio(const OggettiViaggio& ov){
 }
 
 ostream& operator<<(ostream& os, const OggettiViaggio& Ov){
-    OggettiViaggio::Objects *tmp = Ov.head;
+    OggettiViaggio::Object *tmp = Ov.head;
 
     while (tmp){
         if(!tmp->isTaken)
@@ -40,7 +40,7 @@ void OggettiViaggio::aggiungi(const char* descr){
     if (strlen(descr) > MAX_L || strlen(descr) == 0)
         return;
 
-    Objects *toAdd = new Objects;
+    Object *toAdd = new Object;
 
     strcpy(toAdd->descr, descr);
     toAdd->isTaken = false;
@@ -50,7 +50,7 @@ void OggettiViaggio::aggiungi(const char* descr){
         head = toAdd;
     else{
 
-        Objects *tmp, *cur;
+        Object *tmp, *cur;
 
         for (tmp = head; tmp != nullptr; tmp = tmp->next){
             if(strcmp(tmp->descr, descr) == 0){
@@ -68,7 +68,7 @@ void OggettiViaggio::prendi(const char* descr){
     if (strlen(descr) > MAX_L || strlen(descr) == 0)
         return;
 
-    Objects *tmp, *cur = nullptr;
+    Object *tmp, *cur = nullptr;
 
     for (tmp = head; tmp != nullptr; tmp = tmp->next){
         if(strcmp(tmp->descr, descr) == 0)
@@ -82,7 +82,7 @@ void OggettiViaggio::prendi(const char* descr){
 }
 
 void OggettiViaggio::viaggia(){
-    Objects *tmp = head;
+    Object *tmp = head;
 
     while(tmp){
         if(tmp->isTaken)
@@ -90,4 +90,64 @@ void OggettiViaggio::viaggia(){
 
         tmp = tmp->next;
     }
+}
+
+//Seconda Parte
+OggettiViaggio::~OggettiViaggio(){
+    Object *cur;
+
+    while(head){
+        cur = head;
+        head = head->next;
+        delete cur;
+    }
+}
+
+void OggettiViaggio::rimuovi(const char* descr){
+    if (strlen(descr) > MAX_L || strlen(descr) == 0)
+        return;
+
+    Object *tmp = head, *cur;
+
+    if(strcmp(descr, tmp->descr) == 0){
+        cur = head;
+        head = head->next;
+        delete cur;
+    }
+
+    for (tmp = head; tmp != nullptr; tmp = tmp->next){
+        
+        if(tmp->next != nullptr && strcmp(tmp->next->descr, descr) == 0){
+            cur = tmp->next;
+            tmp->next = cur->next;
+            delete cur;
+            break;
+        }
+
+    }
+}
+
+OggettiViaggio& OggettiViaggio::operator+=(const OggettiViaggio& ov2){
+    Object *tmpHead = nullptr;
+
+    for (tmpHead = ov2.head; tmpHead != nullptr; tmpHead = tmpHead->next){
+        this->aggiungi(tmpHead->descr);
+
+        if(tmpHead->isTaken)
+            this->prendi(tmpHead->descr);
+    }
+
+    return *this;
+}
+
+OggettiViaggio OggettiViaggio::operator!()const {
+    OggettiViaggio ov2;
+
+    Object *tmp = nullptr;
+
+    for (tmp = head; tmp != nullptr; tmp = tmp->next)
+        if(!tmp->isTaken)
+            ov2.aggiungi(tmp->descr);
+
+    return ov2;
 }

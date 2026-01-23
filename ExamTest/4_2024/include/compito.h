@@ -5,23 +5,28 @@ const int MAX_L = 40;
 
 class OggettiViaggio
 {
-    struct Objects{
+    struct Object{
         char descr[MAX_L + 1];
         bool isTaken;
 
-        Objects *next;
+        Object *next;
     };
 
-    Objects *head;
+    Object *head;
 
 public:
     //Prima Parte
     OggettiViaggio();
     OggettiViaggio(const OggettiViaggio &);
-
     friend ostream &operator<<(ostream &, const OggettiViaggio&);
     void aggiungi(const char *);
     void prendi(const char *);
     void viaggia();
+
+    //Seconda Parte
+    ~OggettiViaggio();
+    void rimuovi(const char *);
+    OggettiViaggio& operator+=(const OggettiViaggio&);
+    OggettiViaggio operator!()const;
 };
 
