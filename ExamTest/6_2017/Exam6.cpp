@@ -22,9 +22,9 @@ int main()
    a.aggiungiColonna(8);
    cout << a << endl;   
 
-    /*
+    
    cout << endl << "--- SECONDA PARTE ---" << endl;
-
+    
    cout << endl << "Chiamata alla funzione togliColonna()" << endl;
    a.togliColonna(1);
    cout << a << endl;
@@ -38,7 +38,7 @@ int main()
        cout << endl;
        cout << "Test del distruttore (a1 sta per essere distrutto)" << endl;		
    }
-    */
+    
    return 0;
 
 }

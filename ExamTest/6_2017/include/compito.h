@@ -16,4 +16,9 @@ public:
     void aggiungiMattonelle(const int);
     void aggiungiColonna(const int);
     friend ostream &operator<<(ostream &, const Anfiteatro &);
+
+    //Seconda Parte
+    ~Anfiteatro();
+    void togliColonna(const int j);
+    Anfiteatro &operator=(const Anfiteatro &);
 };
