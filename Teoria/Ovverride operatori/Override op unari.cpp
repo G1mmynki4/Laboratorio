@@ -52,8 +52,8 @@ complesso::operator+(int a); //In questo caso il primo argomento è il ptr this,
   Nel caso di operatore POST-FISSO (c1 ++), in caso volessi usare entrambe le opzioni, dovrei definire nuovamente
   una funzione operator++(), sta volta passando un argomento in più di tipo INTERO utilizzato dal compilatore come
   DISCRIMINANTE tra i metodi di invocazione:
-    *c1++(come prefisso: funzione senza int)
-    *++c1(come postfisso: funzione con discrim. int)
+    *++c1(come prefisso: funzione senza int)
+    c1++(come postfisso: funzione con discrim. int)
 
   *Come fun. mebro, va passato un altro argomento intero, necessario per discriminare il prefisso dal postfisso
    Nella classe:
