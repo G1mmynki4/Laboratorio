@@ -23,10 +23,12 @@ using namespace std;
 
 // Heap::Heap definito nella classe con lista di inizalizzazione;
 
+
 Heap::~Heap(){
     delete[] HeapVec;
 
 } // Non utilizzando puntatori basta semplicemente eliminare l'array per liberare correttamente la memoria;
+
 
 void Heap::swap(int i, int j){
 
@@ -34,6 +36,7 @@ void Heap::swap(int i, int j){
     HeapVec[i] = HeapVec[j];
     HeapVec[j] = tmp;
 }
+
 
 void Heap::Insert(int inf){
     if(last > dim-2)
@@ -43,6 +46,7 @@ void Heap::Insert(int inf){
     up(last);              // Chiamo la funzione di riordinamento per far risalire il nodo (se necessario);
 
 } // Inserimento di un nodo in ultima posizione di deafault e riordinamento per risalita;
+
 
 void Heap::up(int i){
     if(i > 0){
@@ -58,6 +62,7 @@ void Heap::up(int i){
 
 } // La complessità è O(logn) perchè ogni chiamata sale di un livello;
 
+
 int Heap::Extract(){
     int res = HeapVec[0]; // Restituisco la radice;
 
@@ -67,6 +72,7 @@ int Heap::Extract(){
     return res;
 
 } // Tolgo la radice, la sostituisco con l'ultimo elemendo dell'Heap e riordino verso il basso la nuova radice;
+
 
 void Heap::down(int i){
 
