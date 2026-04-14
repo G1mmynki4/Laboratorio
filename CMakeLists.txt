@@ -40,9 +40,9 @@ add_executable(Laboratorio
         #"ExamTest/1_2026/include/compito.h"
         #"ExamTest/1_2026/include/compito.cpp"
         #"ExamTest/1_2026/Exam1.cpp"
-        "ExamTest/2_2026/include/compito.h"
-        "ExamTest/2_2026/include/compito.cpp"
-        "ExamTest/2_2026/Exam2.cpp"
+        #"ExamTest/2_2026/include/compito.h"
+        #"ExamTest/2_2026/include/compito.cpp"
+        #"ExamTest/2_2026/Exam2.cpp"
 
         #Appello 4 2024
         #"ExamTest/4_2024/include/compito.h"
@@ -110,5 +110,8 @@ add_executable(Laboratorio
         #"Lab 8/Uso debuger 1 8.1.cpp"
 
 
+
+        #Algoritmi e Strutture Dati
+        "Algoritmi e Strutture Dati/Esercizi Laboratorio/Lab4/Es1/1_ABR_init.cpp"
 
 )
