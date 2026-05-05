@@ -112,6 +112,7 @@ add_executable(Laboratorio
 
 
         #Algoritmi e Strutture Dati
-        "Algoritmi e Strutture Dati/Esercizi Laboratorio/Lab4/Es1/1_ABR_init.cpp"
+        #"Algoritmi e Strutture Dati/Esercizi Laboratorio/Lab4/Es1/1_ABR_init.cpp"
+        "Algoritmi e Strutture Dati/Esercizi Laboratorio/Lab6/Es1/1_Hash.cpp"
 
 )
